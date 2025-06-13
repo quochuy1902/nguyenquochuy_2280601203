@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from cipher.rsa import RSACipher
+from cipher.ecc import ECCCipher
 
 app = Flask(__name__)
 
@@ -62,6 +63,8 @@ def rsa_verify_signature():
     is_verified = rsa_cipher.verify(message, signature, public_key)
     return jsonify({'is_verified': is_verified})
 
+#ECC CIPHER ALGORITHM
+ecc_cipher = ECCCipher()
 
 @app.route('/api/ecc/generate_keys', methods=['GET'])
 def ecc_generate_keys():
