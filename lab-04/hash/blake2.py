@@ -13,4 +13,4 @@ def main():
     print("BLAKE2 Hash:", hashed_text.hex())
 
 if __name__ == "__main__":
-    main()
+    main()  
